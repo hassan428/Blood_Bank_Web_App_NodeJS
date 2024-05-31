@@ -1,11 +1,11 @@
 require("dotenv").config();
 const express = require("express");
 const allRoutes = require("./routes/index");
-const connect_to_database = require("./config/mongoDb");
 const cookieParser = require("cookie-parser");
 const app = express();
 const { PORT } = process.env;
 const cors = require("cors");
+const connect_to_database = require("./config/mongoDb");
 
 try {
   app.use(
