@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-image {
+  background-image: url(../src/assets/bg-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-card {
+  background-image: url(../src/assets/bg-card.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100%;
+}
+
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
