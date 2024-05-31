@@ -4,16 +4,15 @@ const nodemailer = require("nodemailer");
 // const { Cheerio } = require("cheerio");
 const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
 
-
 const transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 465,
-    service: "gmail",
-    secure: true, // Use `true` for port 465, `false` for all other ports
-    auth: {
-        user: ADMIN_EMAIL,
-        pass: SERVICE_PASSWORD,
-    },
+  host: "smtp.ethereal.email",
+  port: 465,
+  service: "gmail",
+  secure: true, // Use `true` for port 465, `false` for all other ports
+  auth: {
+    user: ADMIN_EMAIL,
+    pass: SERVICE_PASSWORD,
+  },
 });
 
 // const file_path = path.join(__dirname, '../public/otp.html');
@@ -21,14 +20,13 @@ const transporter = nodemailer.createTransport({
 // const $ = Cheerio.load(read_file);
 
 async function email_send(email, username, otp_code) {
-
-    // send mail with defined transport object
-    const info = await transporter.sendMail({
-        from: `"M.HASSAN " ${ADMIN_EMAIL}`, // sender address
-        to: email, // list of receivers
-        subject: `OTP Verification`, // Subject line
-        // text: "Hello world?", // plain text body
-        html: `<!DOCTYPE html>
+  // send mail with defined transport object
+  const info = await transporter.sendMail({
+    from: `"M.HASSAN " ${ADMIN_EMAIL}`, // sender address
+    to: email, // list of receivers
+    subject: `OTP Verification`, // Subject line
+    // text: "Hello world?", // plain text body
+    html: `<!DOCTYPE html>
         <html lang="en">
         <head>
         <meta charset="UTF-8">
@@ -102,13 +100,11 @@ async function email_send(email, username, otp_code) {
             </div>
         </body>
         </html>
-        `  // html body
-    });
+        `, // html body
+  });
 
+  console.log("Message sent: %s", info.messageId);
+  // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
+}
 
-    console.log("Message sent: %s", info.messageId);
-    // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
-};
-
-
-module.exports = { email_send }
+module.exports = { email_send };
