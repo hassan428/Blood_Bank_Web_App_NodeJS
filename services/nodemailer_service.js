@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
     user: ADMIN_EMAIL,
     pass: SERVICE_PASSWORD,
   },
-  secure: true, // Use `true` if you are using port 465, else `false`
+  secure: false, // Use `true` if you are using port 465, else `false`
 });
 
 // const file_path = path.join(__dirname, '../public/otp.html');
