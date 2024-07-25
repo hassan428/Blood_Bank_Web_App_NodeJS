@@ -4,24 +4,15 @@ const nodemailer = require("nodemailer");
 // const { Cheerio } = require("cheerio");
 const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
 
-// const transporter = nodemailer.createTransport({
-//   host: "smtp.ethereal.email",
-//   port: 465,
-//   service: "gmail",
-//   secure: true, // Use `true` for port 465, `false` for all other ports
-//   auth: {
-//     user: ADMIN_EMAIL,
-//     pass: SERVICE_PASSWORD,
-//   },
-// });
-
 const transporter = nodemailer.createTransport({
+  //   host: "smtp.ethereal.email",
+  //   port: 465,
   service: "gmail",
+  //   secure: true, // Use `true` for port 465, `false` for all other ports
   auth: {
     user: ADMIN_EMAIL,
     pass: SERVICE_PASSWORD,
   },
-  secure: false, // Use `true` if you are using port 465, else `false`
 });
 
 // const file_path = path.join(__dirname, '../public/otp.html');
