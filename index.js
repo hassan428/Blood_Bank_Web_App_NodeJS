@@ -7,25 +7,22 @@ const { PORT } = process.env;
 const cors = require("cors");
 const connect_to_database = require("./config/mongoDb");
 
-try {
-  app.use(
-    cors({
-      origin: function (origin, callback) {
-        return callback(null, true);
-      },
-      credentials: true,
-      optionsSuccessStatus: 200,
-    })
-  );
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      return callback(null, true);
+    },
+    credentials: true,
+    optionsSuccessStatus: 200,
+  })
+);
 
-  app.use(cookieParser());
-  // Note: cookie parser must be used before express.json() and express.use(allRoutes);
-  app.use(express.json()); // for parsing application/json
-  app.use(allRoutes);
-  connect_to_database();
-} catch (error) {
-  console.log(error);
-}
+app.use(cookieParser());
+// Note: cookie parser must be used before express.json() and express.use(allRoutes);
+app.use(express.json()); // for parsing application/json
+app.use(allRoutes);
+connect_to_database();
+
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
