@@ -3,13 +3,12 @@ const nodemailer = require("nodemailer");
 // const fs = require('fs');
 // const { Cheerio } = require("cheerio");
 const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
-
-// host: "smtp.ethereal.email",
+//   host: "smtp.ethereal.email",
+//   port: 465,
+//   service: "gmail",
+//   secure: true, //
 const transporter = nodemailer.createTransport({
-  host: "smtp.ethereal.email",
-  port: 465,
   service: "gmail",
-  secure: true, //
   auth: {
     user: ADMIN_EMAIL,
     pass: SERVICE_PASSWORD,
