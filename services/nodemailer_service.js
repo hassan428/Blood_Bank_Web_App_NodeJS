@@ -1,13 +1,15 @@
 const nodemailer = require("nodemailer");
 const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
-console.log("process.env", process.env);
 //   host: "smtp.ethereal.email",
+console.log("process.env.ADMIN_EMAIL", process.env.ADMIN_EMAIL);
+console.log("process.env.SERVICE_PASSWORD", process.env.SERVICE_PASSWORD);
 //   port: 465,
 //   service: "gmail",
 //   secure: true, //
 const transporter = nodemailer.createTransport({
   //   service: "gmail",
   //   authMethod: "plain",
+
   port: 587,
   host: "smtp.gmail.com",
   auth: {
