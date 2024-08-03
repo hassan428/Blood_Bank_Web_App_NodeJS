@@ -32,7 +32,6 @@ const signUp = async (req, res) => {
     await email_send(email, username, otp).catch(async (err) => {
       await code_model.deleteOne({ user_id: _id });
       await user_model.deleteOne(_id);
-      console.log("err", err);
       throw err;
     });
 

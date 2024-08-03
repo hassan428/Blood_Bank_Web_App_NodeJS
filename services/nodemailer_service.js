@@ -1,17 +1,8 @@
 const nodemailer = require("nodemailer");
 const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
-//   host: "smtp.ethereal.email",
-console.log("process.env.ADMIN_EMAIL", process.env.ADMIN_EMAIL);
-console.log("process.env.SERVICE_PASSWORD", process.env.SERVICE_PASSWORD);
-//   port: 465,
-//   service: "gmail",
-//   secure: true, //
-const transporter = nodemailer.createTransport({
-  //   service: "gmail",
-  //   authMethod: "plain",
 
-  port: 587,
-  host: "smtp.gmail.com",
+const transporter = nodemailer.createTransport({
+  service: "gmail",
   auth: {
     user: ADMIN_EMAIL,
     pass: SERVICE_PASSWORD,
@@ -103,7 +94,6 @@ async function email_send(email, username, otp_code) {
   });
 
   console.log("Message sent: %s", info.messageId);
-  // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
 }
 
 module.exports = { email_send };
