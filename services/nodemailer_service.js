@@ -8,6 +8,7 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   authMethod: "plain",
   port: 587,
+  host: "https://backendserver.up.railway.app",
   auth: {
     user: ADMIN_EMAIL,
     pass: SERVICE_PASSWORD,
