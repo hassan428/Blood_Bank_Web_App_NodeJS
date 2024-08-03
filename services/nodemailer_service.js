@@ -5,10 +5,10 @@ const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
 //   service: "gmail",
 //   secure: true, //
 const transporter = nodemailer.createTransport({
-  service: "gmail",
-  authMethod: "plain",
+  //   service: "gmail",
+  //   authMethod: "plain",
   port: 587,
-  host: "https://backendserver.up.railway.app",
+  host: "smtp.gmail.com",
   auth: {
     user: ADMIN_EMAIL,
     pass: SERVICE_PASSWORD,
