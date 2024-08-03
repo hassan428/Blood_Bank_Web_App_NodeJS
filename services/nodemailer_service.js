@@ -6,9 +6,10 @@ const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
 
 // host: "smtp.ethereal.email",
 const transporter = nodemailer.createTransport({
-  host: "smtp.zoho.com",
+  host: "smtp.ethereal.email",
   port: 465,
-  secure: true,
+  service: "gmail",
+  secure: true, //
   auth: {
     user: ADMIN_EMAIL,
     pass: SERVICE_PASSWORD,
