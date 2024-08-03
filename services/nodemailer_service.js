@@ -1,7 +1,5 @@
+require("dotenv").config();
 const nodemailer = require("nodemailer");
-// const path = require('path');
-// const fs = require('fs');
-// const { Cheerio } = require("cheerio");
 const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
 //   host: "smtp.ethereal.email",
 //   port: 465,
@@ -14,10 +12,6 @@ const transporter = nodemailer.createTransport({
     pass: SERVICE_PASSWORD,
   },
 });
-
-// const file_path = path.join(__dirname, '../public/otp.html');
-// const read_file = fs.readFileSync(file_path, "utf-8");
-// const $ = Cheerio.load(read_file);
 
 async function email_send(email, username, otp_code) {
   // send mail with defined transport object
