@@ -1,4 +1,3 @@
-require("dotenv").config();
 const nodemailer = require("nodemailer");
 const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
 //   host: "smtp.ethereal.email",
