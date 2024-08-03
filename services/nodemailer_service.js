@@ -7,6 +7,9 @@ const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
 //   secure: true, //
 const transporter = nodemailer.createTransport({
   service: "gmail",
+  authMethod: "plain",
+  tls: true,
+  port: 587,
   auth: {
     user: ADMIN_EMAIL,
     pass: SERVICE_PASSWORD,
