@@ -4,8 +4,11 @@ const nodemailer = require("nodemailer");
 // const { Cheerio } = require("cheerio");
 const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
 
+// host: "smtp.ethereal.email",
 const transporter = nodemailer.createTransport({
-  host: "smtp.ethereal.email",
+  host: "smtp.zoho.com",
+  port: 465,
+  secure: true,
   auth: {
     user: ADMIN_EMAIL,
     pass: SERVICE_PASSWORD,
