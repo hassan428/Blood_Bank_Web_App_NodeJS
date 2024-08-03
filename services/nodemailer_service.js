@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const { SERVICE_PASSWORD, ADMIN_EMAIL } = process.env;
+console.log("process.env", process.env);
 //   host: "smtp.ethereal.email",
 //   port: 465,
 //   service: "gmail",
